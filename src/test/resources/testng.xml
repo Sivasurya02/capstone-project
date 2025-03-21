@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AutomationSuite" parallel="false">  <!-- Ensures sequential execution -->
+
+    <test name="Step 1 - Register User">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ecommerce.runners.RegisterTestRunner"/>  <!-- Runs Register first -->
+        </classes>
+    </test>
+
+    <test name="Step 2 - Login and Logout">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ecommerce.runners.LoginTestRunner"/>  <!-- Runs Login after Register -->
+        </classes>
+    </test>
+
+    <test name="Step 3 - Contact Us and Other User Actions">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ecommerce.runners.UserActionsTestRunner"/>  <!-- Runs Contact Us after Login -->
+        </classes>
+    </test>
+
+    <test name="Step 4 - Product and Cart Actions">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ecommerce.runners.ProductAndCartTestRunner"/>  <!-- Runs Product & Cart after User Actions -->
+        </classes>
+    </test>
+    
+    <test name="Step 5 - Categories and Brand Actions">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ecommerce.runners.CategoriesAndBrandTestRunner"/>  <!-- Runs Categories and brand User Actions -->
+        </classes>
+    </test>
+    
+    <test name="Step 6 - Checkout Actions">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ecommerce.runners.CheckoutTestRunner"/>  <!-- Runs Checkout after User Actions -->
+        </classes>
+    </test>
+
+</suite>
